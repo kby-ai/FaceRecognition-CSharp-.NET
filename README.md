@@ -182,5 +182,5 @@ This project uses `KBY-AI`'s `Face Recognition Server SDK`, which requires a lic
 
 ### 4. Thresholds
   The default thresholds are as the following below:
-  https://github.com/kby-ai/FaceRecognition-CSharp-.NET/blob/0b55245a2edc2d14f3b20bd460b1a2d1cb678f17/FaceRecognition/Form1.cs#L14-L31
+  https://github.com/kby-ai/FaceRecognition-CSharp-.NET/blob/0b55245a2edc2d14f3b20bd460b1a2d1cb678f17/FaceRecognition/Form1.cs#L25-L26
 
