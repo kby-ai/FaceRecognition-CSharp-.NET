@@ -24,11 +24,6 @@ namespace FaceRecognition
 
         float identifyThreshold = 0.7f;
 
-
-        byte[] templates1 = null;
-        byte[] templates2 = null;
-        float verify_threshold = 0.7f;
-
         public Form1()
         {
             InitializeComponent();
@@ -292,18 +287,6 @@ namespace FaceRecognition
                         InsertPerson(person, this.conn);
                         RefreshListView();
                     }
-
-                    //templates1 = faceBoxes[0].templates;
-
-                    //if (templates1 != null && templates2 != null)
-                    //{
-                    //    float similarity = FaceSDK.SimilarityCalculation(templates1, templates2);
-                    //    String recog_result = "same";
-                    //    if (similarity < verify_threshold)
-                    //        recog_result = "different";
-
-                    //    richTextBoxResult.Text += recog_result + " " + similarity.ToString();
-                    //}
                 }
                 else
                 {
