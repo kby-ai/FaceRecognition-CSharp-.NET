@@ -13,7 +13,7 @@
 # FaceRecognition-C#
 ## Overview
 This repository demonstrates an advanced face recognition technology by implementing face comparison based on face feature extraction and face matching algorithm.<br/>
- It includes capabilities for testing face recognition in 1:N matching scenarios.
+It includes capabilities for testing face recognition in `1:N matching` scenarios.
 
 > In this repo, we integrated `KBY-AI`'s face recognition solution into `Windows Server SDK`.<br/>
 > We can customize the SDK to align with your specific requirements.
@@ -55,7 +55,7 @@ This project uses `KBY-AI`'s `Face Recognition Server SDK`, which requires a lic
 
 - To request the license, please provide us with the `machine code` obtained from the `getMachineCode` function.
 
-- Ensure you copy the 'license.txt' file to the 'bin/x64/Debug folder', as shown in the image below:
+- Ensure you copy the `license.txt` file to the `bin/x64/Debug` folder, as shown in the image below:
 ![image](https://github.com/user-attachments/assets/f3573d88-12c2-4d1f-8fcb-1d202be7e132)
 
 
@@ -131,7 +131,7 @@ This project uses `KBY-AI`'s `Face Recognition Server SDK`, which requires a lic
     <img src="https://user-images.githubusercontent.com/125717930/235560305-ee1b6a39-5dab-4832-a214-732c379cabfd.png" width=500/>
 
 ### 3. APIs
-  Please refer to 'FaceSDK.cs', where all APIs are implemented.
+  Please refer to `FaceSDK.cs`, where all APIs are implemented.
   - Face Detection
   
     The `Face SDK` provides a single API for detecting faces, determining `face orientation` (yaw, roll, pitch), assessing `face quality`, detecting `facial occlusion`, `eye closure`, `mouth opening`, and identifying `facial landmarks`.
