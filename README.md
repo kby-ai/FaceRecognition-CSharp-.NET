@@ -71,6 +71,7 @@ This project uses `KBY-AI`'s `Face Recognition Server SDK`, which requires a lic
 🧙`WhatsApp:` [+19092802609](https://wa.me/+19092802609)</br>
 🧙`Skype:` [live:.cid.66e2522354b1049b](https://join.skype.com/invite/OffY2r1NUFev)</br>
 🧙`Discord:` [KBY-AI](https://discord.gg/CgHtWQ3k9T)</br>
+🧙`Teams:` [KBY-AI](https://teams.live.com/l/invite/FAAYGB1-IlXkuQM3AQ)</br>
 
 ## About SDK
 
