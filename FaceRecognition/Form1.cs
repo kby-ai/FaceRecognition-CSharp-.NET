@@ -258,10 +258,23 @@ namespace FaceRecognition
                 BitmapData bitmapData = imgBmp.LockBits(new Rectangle(0, 0, imgBmp.Width, imgBmp.Height), ImageLockMode.ReadWrite, imgBmp.PixelFormat);
 
                 int bytesPerPixel = Bitmap.GetPixelFormatSize(imgBmp.PixelFormat) / 8;
-                int byteCount = bitmapData.Stride * imgBmp.Height;
-                byte[] pixels = new byte[byteCount];
+                int stride = bitmapData.Stride;
+
+                // Allocate array with width * 3 for each pixel's RGB values
+                byte[] pixels = new byte[imgBmp.Width * 3 * imgBmp.Height];
+
                 IntPtr ptrFirstPixel = bitmapData.Scan0;
-                Marshal.Copy(ptrFirstPixel, pixels, 0, pixels.Length);
+                byte[] rawData = new byte[stride * imgBmp.Height];
+                Marshal.Copy(ptrFirstPixel, rawData, 0, rawData.Length);
+
+                // Copy only the RGB data, ignoring any padding
+                for (int y = 0; y < imgBmp.Height; y++)
+                {
+                    int rawOffset = y * stride;
+                    int pixelOffset = y * imgBmp.Width * 3;
+
+                    Marshal.Copy(rawData, rawOffset, Marshal.UnsafeAddrOfPinnedArrayElement(pixels, pixelOffset), imgBmp.Width * 3);
+                }
 
                 imgBmp.UnlockBits(bitmapData);
 
@@ -320,10 +333,23 @@ namespace FaceRecognition
                 BitmapData bitmapData = imgBmp.LockBits(new Rectangle(0, 0, imgBmp.Width, imgBmp.Height), ImageLockMode.ReadWrite, imgBmp.PixelFormat);
 
                 int bytesPerPixel = Bitmap.GetPixelFormatSize(imgBmp.PixelFormat) / 8;
-                int byteCount = bitmapData.Stride * imgBmp.Height;
-                byte[] pixels = new byte[byteCount];
+                int stride = bitmapData.Stride;
+
+                // Allocate array with width * 3 for each pixel's RGB values
+                byte[] pixels = new byte[imgBmp.Width * 3 * imgBmp.Height];
+
                 IntPtr ptrFirstPixel = bitmapData.Scan0;
-                Marshal.Copy(ptrFirstPixel, pixels, 0, pixels.Length);
+                byte[] rawData = new byte[stride * imgBmp.Height];
+                Marshal.Copy(ptrFirstPixel, rawData, 0, rawData.Length);
+
+                // Copy only the RGB data, ignoring any padding
+                for (int y = 0; y < imgBmp.Height; y++)
+                {
+                    int rawOffset = y * stride;
+                    int pixelOffset = y * imgBmp.Width * 3;
+
+                    Marshal.Copy(rawData, rawOffset, Marshal.UnsafeAddrOfPinnedArrayElement(pixels, pixelOffset), imgBmp.Width * 3);
+                }
 
                 imgBmp.UnlockBits(bitmapData);
 
